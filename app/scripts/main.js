@@ -49,7 +49,6 @@ audioButton.addEventListener('click', (e)  => {
   } else {
     audio.play();
   }
-
 });
 
 // ------------------------------------
@@ -61,16 +60,15 @@ var bookBtn = document.getElementById("book-button");
 var closeSpan = document.getElementsByClassName("close")[0];
 
 bookBtn.onclick = function() {
-    bookModal.style.display = "block";
+  bookModal.style.display = "block";
 }
 
 closeSpan.onclick = function() {
-    bookModal.style.display = "none";
+  bookModal.style.display = "none";
 }
 
 window.onclick = function(event) {
-  console.log(event.target);
-    if (event.target == bookModal) {
-        bookModal.style.display = "none";
-    }
+  if (event.target == bookModal) {
+    bookModal.style.display = "none";
+  }
 }
