@@ -9,10 +9,10 @@ let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let player;
-const bgVideo = document.querySelector('#background--video');
+const bgVideo = document.querySelector('#background-video');
 
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('background--video', {
+  player = new YT.Player('background-video', {
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange,
@@ -26,7 +26,7 @@ function onPlayerReady() {
 }
 
 function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING) {
+  if (event.data === YT.PlayerState.PLAYING) {
     bgVideo.style.opacity = 1;
   }
 }
@@ -55,19 +55,19 @@ audioButton.onclick = (e)  => {
 // modal
 // ------------------------------------
 
-const bookModal = document.querySelector('#book-modal');
+const bookModal = $('#book-modal');
 
-$('#book-button').click(() => {
-  bookModal.style.display = "block";
+$('.book-button').click(() => {
+  bookModal.show();
 });
 
 $('.close').click(() => {
-  bookModal.style.display = "none";
+  bookModal.hide();
 });
 
 $(window).click((e) => {
-  if (e.target == bookModal) {
-    bookModal.style.display = "none";
+  if (e.target === document.querySelector('#book-modal')) {
+    bookModal.hide();
   }
 });
 

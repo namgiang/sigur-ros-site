@@ -1,0 +1,27 @@
+.modal {
+  font-size: $size-normal;
+  background-color: $color-overlay;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.modal-content {
+  top: 35%;
+  width: 30%;
+  margin: auto;
+}
+
+.close {
+  padding: 2% 4%;
+}
+
+.modal-content--main-section {
+  padding: $padding-top-content;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}

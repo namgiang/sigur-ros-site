@@ -1,0 +1,38 @@
+@media screen and (max-width: 1200px) {
+  #background--video {
+    width: 140vw;
+    height: 140vh;
+    margin-left: -20vw;
+    margin-top: -20vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #background--video {
+    display: none;
+  }
+
+  .content--section-1 {
+    padding: $padding-top-content;
+  }
+
+  .modal-content {
+    width: 80% !important ;
+  }
+
+  .about--artist,
+  .about--pictures {
+    width: 100%;
+  }
+
+  .about--pictures {
+    padding: 0;
+  }
+
+  .img-container {
+    width: 100%;
+    max-height: 100%;
+    margin: 5% 0;
+  }
+
+}

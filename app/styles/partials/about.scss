@@ -1,0 +1,35 @@
+.about {
+  @extend .content--section-1;
+  @include position(absolute, 100% 0 0 0);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.about--artist {
+  width: 30%;
+}
+
+.about--description {
+  font-size: $size-normal;
+}
+
+.about--pictures {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 5%;
+}
+
+.img-container {
+  width: 46%;
+  max-height: 34%;
+  overflow-y: hidden;
+  margin: 1% 2%;
+}
+
+.img-artist {
+  width: 100%;
+}
