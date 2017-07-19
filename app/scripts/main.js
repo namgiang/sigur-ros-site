@@ -8,7 +8,7 @@ tag.src = "https://www.youtube.com/iframe_api";
 let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-const player;
+let player;
 const bgVideo = document.querySelector('#background--video');
 
 function onYouTubeIframeAPIReady() {
@@ -61,7 +61,7 @@ $('#book-button').click(() => {
   bookModal.style.display = "block";
 });
 
-$('.close')click(() => {
+$('.close').click(() => {
   bookModal.style.display = "none";
 });
 
@@ -78,10 +78,5 @@ $(window).click((e) => {
 let offsetTop = $('.about').offset().top;
 
 $('#about-button').click(() => {
-  let updateFrame = () => {
-    $('.content').animate({ scrollTop: offsetTop }, 400, function(){
-      window.requestAnimationFrame(updateFrame);
-    });
-  }
-  updateFrame();
+  $('.content').animate({ scrollTop: offsetTop }, 600);
 });
