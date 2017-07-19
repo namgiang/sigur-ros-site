@@ -15,6 +15,7 @@ $icon-font-path: '../fonts/';
 // ------------------------------------
 
 @import 'app/styles/partials/logo';
+@import url('https://fonts.googleapis.com/css?family=Fresca');
 
 
 // ------------------------------------
@@ -23,11 +24,20 @@ $icon-font-path: '../fonts/';
 
 .background {
   position: fixed;
+  // margin-top: -10vh;
   width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  background-color: black;
+}
+
+.background--fore-ground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background: url('../images/background-img.jpeg') no-repeat;
+  background-size: cover;
 }
 
 #background--video {
@@ -43,14 +53,59 @@ $icon-font-path: '../fonts/';
 }
 
 .content {
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .5);
+  font-family: 'Fresca', sans-serif;
   padding: 10% 15%;
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   color: white;
+}
+
+.content--header {
+  // margin-bottom: 4vh;
+}
+
+.content--logo {
+  max-width: 80%;
+}
+
+.content--button {
+  background: none;
+  border: none;
+  font-size: 2em;
+  outline: none;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid white;
+  }
+}
+
+.audio-player {
+  margin: 4vh 0;
+}
+
+.audio-player--button {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxMDBweCIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iLTI1NSAzMzQgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAtMjU1IDMzNCAxMDAgMTAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNLTIwNSwzMzQuOWMtMjcuMSwwLTQ5LjEsMjItNDkuMSw0OS4xczIyLDQ5LjEsNDkuMSw0OS4xczQ5LjEtMjIsNDkuMS00OS4xUy0xNzcuOSwzMzQuOS0yMDUsMzM0Ljl6DQoJIE0tMjA1LDQyNC44Yy0yMi41LDAtNDAuOC0xOC4zLTQwLjgtNDAuOHMxOC4zLTQwLjgsNDAuOC00MC44czQwLjgsMTguMyw0MC44LDQwLjhTLTE4Mi41LDQyNC44LTIwNSw0MjQuOHoiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0tMjEzLjUsNDAwLjljMC42LDAuMywxLjIsMC40LDEuOCwwLjRjMC43LDAsMS41LTAuMiwyLjEtMC43bDIwLjItMTMuOGMxLTAuNywxLjYtMS45LDEuNi0zLjENCgljMC0xLjItMC42LTIuNC0xLjctMy4xbC0yMC4yLTEzLjRjLTEuMi0wLjgtMi42LTAuOC0zLjktMC4yYy0xLjIsMC43LTIsMS45LTIsMy4zdjI3LjJDLTIxNS41LDM5OS0yMTQuOCw0MDAuMy0yMTMuNSw0MDAuOXoiLz4NCjwvc3ZnPg0K);
+  background-size: 3em;
+  width: 3em;
+  height: 3em;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.audio-player--button_pause {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxMDBweCIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iLTI1NSAzMzQgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAtMjU1IDMzNCAxMDAgMTAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNLTIwNSwzMzQuOWMtMjcuMSwwLTQ5LjEsMjItNDkuMSw0OS4xczIyLDQ5LjEsNDkuMSw0OS4xczQ5LjEtMjIsNDkuMS00OS4xUy0xNzcuOSwzMzQuOS0yMDUsMzM0Ljl6DQoJIE0tMjA1LDQyNC44Yy0yMi41LDAtNDAuOC0xOC4zLTQwLjgtNDAuOHMxOC4zLTQwLjgsNDAuOC00MC44czQwLjgsMTguMyw0MC44LDQwLjhTLTE4Mi41LDQyNC44LTIwNSw0MjQuOHoiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0tMTk2LjUsMzY5Yy0yLjEsMC0zLjgsMS4yLTMuOCwyLjdWMzk2YzAsMS41LDEuNywyLjcsMy44LDIuN3MzLjgtMS4yLDMuOC0yLjd2LTI0LjMNCglDLTE5Mi42LDM3MC4yLTE5NC4zLDM2OS0xOTYuNSwzNjl6Ii8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNLTIxMy41LDM2OWMtMi4xLDAtMy44LDEuMi0zLjgsMi43VjM5NmMwLDEuNSwxLjcsMi43LDMuOCwyLjdzMy44LTEuMiwzLjgtMi43di0yNC4zDQoJQy0yMDkuNywzNzAuMi0yMTEuNCwzNjktMjEzLjUsMzY5eiIvPg0KPC9zdmc+DQo=);
+}
+
+.audio-player--span-title{
+  text-indent: 3em;
 }
 
 @media screen and (max-width: 1200px) {
@@ -64,7 +119,13 @@ $icon-font-path: '../fonts/';
 
 @media screen and (max-width: 1024px) {
   #background--video {
-    opacity: 0 !important;
-    transition: none;
+    // opacity: 0 !important;
+    // transition: none;
+    display: none;
   }
+
+  .content--button {
+    text-decoration: underline;
+  }
+
 }

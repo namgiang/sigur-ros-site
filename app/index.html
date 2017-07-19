@@ -22,19 +22,28 @@
     <![endif]-->
 
     <div class="background">
-      <iframe id="background--video" src="https://www.youtube.com/embed/INWZy3-Vw80?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&enablejsapi=1&modestbranding=1&start=35" frameborder="0" allowfullscreen></iframe>
+      <div class="background--fore-ground">
+        <iframe id="background--video" src="https://www.youtube.com/embed/INWZy3-Vw80?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&enablejsapi=1&modestbranding=1&start=35&list=PL2yDJQua6p0vBcnPskI5CO-lXAHfcH-5H" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
 
     <section class="content">
       <section class="content--section-1">
-        <header>
+        <header class="content--header">
           <!-- <h1>Sigur Rós</h1> -->
-          <img src="./images/logo-artist.png">
+          <img class="content--logo" src="./images/logo-artist.png">
         </header>
-        <article>
-          <h2>Player</h2>
+        <article class="audio-player">
+          <div class="audio-player--button">
+            <h2 class="audio-player--span-title">Hoppípolla</h2>
+          </div>
+          <audio id="track" src="./assets/sigur_ros-hoppipolla.mp3">
+          </audio>
         </article>
-        <button>Book a show</button>
+        <button class="content--button">Book a show</button>
+        <footer>
+
+        </footer>
       </section>
 
     </div>

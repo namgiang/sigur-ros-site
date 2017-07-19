@@ -1,3 +1,7 @@
+// ------------------------------------
+// setting up the background YouTube video
+// ------------------------------------
+
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -5,12 +9,14 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
+var bgVideo = document.querySelector('#background--video');
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('background--video', {
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+      'onStateChange': onPlayerStateChange,
+      'onError': onPlayerError
     }
   });
 }
@@ -19,8 +25,29 @@ function onPlayerReady() {
   player.mute();
 }
 
-function onPlayerStateChange (event) {
+function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING) {
-    document.querySelector('#background--video').style.opacity = 1;
+    bgVideo.style.opacity = 1;
   }
 }
+
+function onPlayerError() {
+  bgVideo.style.opacity = 0;
+}
+
+// ------------------------------------
+// audio
+// ------------------------------------
+
+var audio = document.querySelector('#track');
+var audioButton = document.querySelector('.audio-player--button');
+
+audioButton.addEventListener('click', (e) => {
+  audioButton.classList.toggle('audio-player--button_pause');
+  if (!audio.paused) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+
+});
