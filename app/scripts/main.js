@@ -2,14 +2,14 @@
 // background YouTube video
 // ------------------------------------
 
-var tag = document.createElement('script');
+let tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
+let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
-var bgVideo = document.querySelector('#background--video');
+const player;
+const bgVideo = document.querySelector('#background--video');
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('background--video', {
@@ -39,36 +39,49 @@ function onPlayerError() {
 // audio
 // ------------------------------------
 
-var audio = document.querySelector('#track');
-var audioButton = document.querySelector('.audio-player--button');
+const audio = document.querySelector('#track');
+const audioButton = document.querySelector('.audio-player--button');
 
-audioButton.addEventListener('click', (e)  => {
+audioButton.onclick = (e)  => {
   audioButton.classList.toggle('audio-player--button_pause');
   if (!audio.paused) {
     audio.pause();
   } else {
     audio.play();
   }
-});
+};
 
 // ------------------------------------
 // modal
 // ------------------------------------
 
-var bookModal = document.getElementById('book-modal');
-var bookBtn = document.getElementById("book-button");
-var closeSpan = document.getElementsByClassName("close")[0];
+const bookModal = document.querySelector('#book-modal');
 
-bookBtn.onclick = function() {
+$('#book-button').click(() => {
   bookModal.style.display = "block";
-}
+});
 
-closeSpan.onclick = function() {
+$('.close')click(() => {
   bookModal.style.display = "none";
-}
+});
 
-window.onclick = function(event) {
-  if (event.target == bookModal) {
+$(window).click((e) => {
+  if (e.target == bookModal) {
     bookModal.style.display = "none";
   }
-}
+});
+
+// ------------------------------------
+// about button
+// ------------------------------------
+
+let offsetTop = $('.about').offset().top;
+
+$('#about-button').click(() => {
+  let updateFrame = () => {
+    $('.content').animate({ scrollTop: offsetTop }, 400, function(){
+      window.requestAnimationFrame(updateFrame);
+    });
+  }
+  updateFrame();
+});
