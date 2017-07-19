@@ -1,5 +1,5 @@
 // ------------------------------------
-// setting up the background YouTube video
+// background YouTube video
 // ------------------------------------
 
 var tag = document.createElement('script');
@@ -42,7 +42,7 @@ function onPlayerError() {
 var audio = document.querySelector('#track');
 var audioButton = document.querySelector('.audio-player--button');
 
-audioButton.addEventListener('click', (e) => {
+audioButton.addEventListener('click', (e)  => {
   audioButton.classList.toggle('audio-player--button_pause');
   if (!audio.paused) {
     audio.pause();
@@ -51,3 +51,26 @@ audioButton.addEventListener('click', (e) => {
   }
 
 });
+
+// ------------------------------------
+// modal
+// ------------------------------------
+
+var bookModal = document.getElementById('book-modal');
+var bookBtn = document.getElementById("book-button");
+var closeSpan = document.getElementsByClassName("close")[0];
+
+bookBtn.onclick = function() {
+    bookModal.style.display = "block";
+}
+
+closeSpan.onclick = function() {
+    bookModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  console.log(event.target);
+    if (event.target == bookModal) {
+        bookModal.style.display = "none";
+    }
+}
