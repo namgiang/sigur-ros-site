@@ -1,6 +1,6 @@
 .about {
-  @extend .content--section-1;
   @include position(absolute, 100% 0 0 0);
+  padding: $padding-top-content 15%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;

@@ -12,7 +12,7 @@ body {
   background-size: cover;
 }
 
-#background--video {
+#background-video {
   @include position(absolute, -10% 0 0 -10%);
   width: 120%;
   height: 120%;

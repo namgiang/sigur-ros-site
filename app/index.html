@@ -26,18 +26,20 @@
     </div>
 
     <section class="content">
-      <section class="content--section-1">
+      <section class="content--top-section">
         <header class="content--header">
           <h1 class="content--title">Sigur Rós</h1>
           <img class="content--logo" src="./images/logo-artist.png">
         </header>
         <article class="audio-player">
-          <div class="audio-player--button">
-            <h2 class="audio-player--span-title">Hoppípolla</h2>
-          </div>
-          <input type="range" id="seek" class="audio-player--seek" value="0" max=""/>
           <audio id="track" src="./assets/sigur_ros-hoppipolla.mp3">
           </audio>
+          <button class="audio-player--button"></button>
+          <input type="range" id="seek" class="audio-player--seek"
+                 min="0" value="0" max=""
+                 oninput="setAudioTime(this.value)"
+                 onchange="setAudioTime(this.value)" />
+          <h2 class="audio-player--title">Hoppípolla</h2>
         </article>
         <button class="book-button">Book this artist</button>
         <footer class="content--footer">

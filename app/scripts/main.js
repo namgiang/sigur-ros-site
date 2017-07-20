@@ -51,6 +51,18 @@ audioButton.onclick = (e)  => {
   }
 };
 
+audio.onloadeddata = () => {
+  $("#seek").attr("max", audio.duration);
+}
+
+audio.addEventListener('timeupdate', function (){
+  document.querySelector('#seek').value = parseInt(audio.currentTime, 10);
+});
+
+const setAudioTime = (value) => {
+  audio.currentTime = value;
+}
+
 // ------------------------------------
 // modal
 // ------------------------------------

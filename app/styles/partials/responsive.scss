@@ -12,12 +12,13 @@
     display: none;
   }
 
-  .content--section-1 {
-    padding: $padding-top-content;
+  .content--top-section {
+    width: 80%;
+    margin: $padding-top-content;
   }
 
   .modal-content {
-    width: 80% !important ;
+    width: 80%;
   }
 
   .about--artist,
