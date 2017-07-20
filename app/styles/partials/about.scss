@@ -2,9 +2,12 @@
   @include position(absolute, 100% 0 0 0);
   padding: $padding-top-content 15%;
   width: 100%;
-  margin: 0;
   min-height: 100%;
   background-color: rgba(0, 0, 0, .6);
+}
+
+.about--row {
+  margin: 0;
 }
 
 .about--artist {
@@ -21,10 +24,8 @@
 }
 
 .img-container {
-  width: 100%;
-  max-height: 30%;
   overflow: hidden;
-  margin: 5% 0;
+  margin: $margin-top-element 0;
 }
 
 .img-artist {

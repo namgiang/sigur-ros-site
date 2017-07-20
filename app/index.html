@@ -2,7 +2,9 @@
 <html class="no-js" lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Sigur Ros Booking Site">
+    <meta name="keywords" content="Sigur Ros, Booking, Show">
+    <meta name="author" content="Nam Giang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sigur Rós</title>
 
@@ -31,9 +33,11 @@
           <h1 class="content--title">Sigur Rós</h1>
           <img class="content--logo" src="./images/logo-artist.png" alt="Sigur Ros' logo">
         </header>
+        <audio id="track" class="audio-track">
+          <source src="./assets/sigur_ros-hoppipolla.mp3" type="audio/mp3">
+          <source src="./assets/sigur_ros-hoppipolla.wav" type="audio/wav">
+        </audio>
         <article class="audio-player">
-          <audio id="track" src="./assets/sigur_ros-hoppipolla.mp3">
-          </audio>
           <button class="audio-player--button" title="Play the track"></button>
           <input type="range" id="seek" class="audio-player--seek"
                  min="0" value="0" max=""
@@ -41,7 +45,7 @@
                  onchange="setAudioTime(this.value)" />
           <div class="audio-player--metadata">
             <label class="audio-player--title">Hoppípolla</label>
-            <label class="audio-player--duration">05:00</label>
+            <label class="audio-player--duration"></label>
           </div>
 
         </article>
@@ -51,23 +55,27 @@
         </footer>
       </section>
 
-      <section class="row about">
-        <section class="col-lg-4 col-md-4 about--artist">
-          <h1>About Sigur Rós</h1>
-          <p class="about--description"><b>Sigur Rós</b> is an Icelandic post-rock band from Reykjavík, who have been active since 1994. Known for their ethereal sound, frontman Jónsi's falsetto vocals, and the use of bowed guitar, the band's music is also noticeable for its incorporation of classical and minimalist aesthetic elements.</p>
-          <button class="book-button">Book Sigur Rós</button>
-        </section>
-        <section class="col-lg-8 col-md-8 row about--pictures">
-          <div class="col-lg-6 col-md-6">
-            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_2.jpg" alt="live show image 1"></div>
-            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_4.jpg" alt="live show image 2"></div>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_5.jpg" alt="live show image 3"></div>
-            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_6.jpg" alt="live show image 4"></div>
-          </div>
-        </section>
+      <section class="about">
+        <div class="row about--row">
+          <section class="col-lg-4 col-md-4 about--artist">
+            <h1>About Sigur Rós</h1>
+            <p class="about--description"><b>Sigur Rós</b> is an Icelandic post-rock band from Reykjavík, who have been active since 1994. Known for their ethereal sound, frontman Jónsi's falsetto vocals, and the use of bowed guitar, the band's music is also noticeable for its incorporation of classical and minimalist aesthetic elements.</p>
+
+          </section>
+          <section class="col-lg-8 col-md-8 row about--pictures">
+            <div class="col-lg-6 col-md-6">
+              <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_2.jpg" alt="live show image 1"></div>
+              <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_4.jpg" alt="live show image 2"></div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_5.jpg" alt="live show image 3"></div>
+              <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_6.jpg" alt="live show image 4"></div>
+            </div>
+          </section>
+        </div>
+        <button class="book-button">Book Sigur Rós</button>
       </section>
+
     </section>
 
     <article id="book-modal" class="modal">
@@ -88,18 +96,9 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->

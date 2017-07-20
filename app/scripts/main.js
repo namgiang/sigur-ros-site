@@ -4,7 +4,7 @@
 
 let tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
+tag.src = 'https://www.youtube.com/iframe_api';
 let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -53,10 +53,16 @@ audioButton.onclick = (e)  => {
   }
 };
 
+// use the default audio player if the browser does not support input type range
+if (!Modernizr.inputtypes.range) {
+  $('.audio-player').hide();
+  audio.controls = true;
+}
+
 let duration = new Date(null);
 
 audio.onloadeddata = () => {
-  $("#seek").attr("max", audio.duration);
+  $('#seek').attr('max', audio.duration);
   duration.setSeconds(audio.duration);
   $('.audio-player--duration').html(duration.toISOString().substr(14, 5));
 }

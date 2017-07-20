@@ -14,8 +14,9 @@ $icon-font-path: '../fonts/';
 // SHARED
 // ------------------------------------
 
-@import 'app/styles/variables';
-@import 'app/styles/shared';
+@import 'app/styles/shared/shared';
+@import 'app/styles/shared/variables';
+
 
 // ------------------------------------
 // MODULES
