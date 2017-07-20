@@ -1,4 +1,6 @@
 $icon-font-path: '../fonts/';
+
+
 // bower:scss
 @import 'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 // endbower
@@ -8,24 +10,35 @@ $icon-font-path: '../fonts/';
 // ------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Fresca');
 
+// ------------------------------------
+// SHARED
+// ------------------------------------
+
+@import 'app/styles/variables';
+@import 'app/styles/shared';
 
 // ------------------------------------
 // MODULES
 // ------------------------------------
 
 @import 'app/styles/modules/position-mixin';
-@import 'app/styles/modules/variables';
+@import 'app/styles/modules/video-position-mixin';
 
 
 // ------------------------------------
 // PARTIALS
 // ------------------------------------
 
-@import 'app/styles/partials/logo';
 @import 'app/styles/partials/background';
 @import 'app/styles/partials/content';
+@import 'app/styles/partials/audio-player';
 @import 'app/styles/partials/about';
 @import 'app/styles/partials/modal';
 @import 'app/styles/partials/responsive';
 
 
+body {
+  background-color: black;
+  font-family: 'Fresca', sans-serif;
+  color: white;
+}

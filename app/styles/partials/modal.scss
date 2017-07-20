@@ -1,13 +1,13 @@
 .modal {
+  @extend .composite-layer;
   font-size: $size-normal;
   background-color: $color-overlay;
   animation-name: fadeIn;
   animation-duration: 0.4s;
-  transform: translateZ(0);
-  will-change: transform;
 }
 
 .modal-content {
+  color: black;
   top: 35%;
   width: 30%;
   margin: auto;

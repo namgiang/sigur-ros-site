@@ -1,0 +1,7 @@
+// to zoom the video and make it cover the whole screen
+@mixin video-width-height-margin ($width: 100vw, $height: 100vh) {
+  width: $width;
+  height: $height;
+  margin-left: (100vw - $width) / 2;
+  margin-top: (100vh - $height) / 2;
+}

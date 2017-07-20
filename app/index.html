@@ -29,34 +29,43 @@
       <section class="content--top-section">
         <header class="content--header">
           <h1 class="content--title">Sigur Rós</h1>
-          <img class="content--logo" src="./images/logo-artist.png">
+          <img class="content--logo" src="./images/logo-artist.png" alt="Sigur Ros' logo">
         </header>
         <article class="audio-player">
           <audio id="track" src="./assets/sigur_ros-hoppipolla.mp3">
           </audio>
-          <button class="audio-player--button"></button>
+          <button class="audio-player--button" title="Play the track"></button>
           <input type="range" id="seek" class="audio-player--seek"
                  min="0" value="0" max=""
                  oninput="setAudioTime(this.value)"
                  onchange="setAudioTime(this.value)" />
-          <h2 class="audio-player--title">Hoppípolla</h2>
+          <div class="audio-player--metadata">
+            <label class="audio-player--title">Hoppípolla</label>
+            <label class="audio-player--duration">05:00</label>
+          </div>
+
         </article>
-        <button class="book-button">Book this artist</button>
+        <button class="book-button">Book this band</button>
         <footer class="content--footer">
-          <button id="about-button" class="content--button"><i>About</i></button>
+          <button id="about-button" title="Go to About Page" class="content--button"><i>About</i></button>
         </footer>
       </section>
 
-      <section class="about">
-        <section class="about--artist">
-          <h1>About</h1>
+      <section class="row about">
+        <section class="col-lg-4 col-md-4 about--artist">
+          <h1>About Sigur Rós</h1>
           <p class="about--description"><b>Sigur Rós</b> is an Icelandic post-rock band from Reykjavík, who have been active since 1994. Known for their ethereal sound, frontman Jónsi's falsetto vocals, and the use of bowed guitar, the band's music is also noticeable for its incorporation of classical and minimalist aesthetic elements.</p>
+          <button class="book-button">Book Sigur Rós</button>
         </section>
-        <section class="about--pictures">
-          <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_2.jpg"></div>
-          <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_4.jpg"></div>
-          <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_5.jpg"></div>
-          <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_6.jpg"></div>
+        <section class="col-lg-8 col-md-8 row about--pictures">
+          <div class="col-lg-6 col-md-6">
+            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_2.jpg" alt="live show image 1"></div>
+            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_4.jpg" alt="live show image 2"></div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_5.jpg" alt="live show image 3"></div>
+            <div class="img-container"><img class="img-artist" src="./images/artist/sigurros_6.jpg" alt="live show image 4"></div>
+          </div>
         </section>
       </section>
     </section>
@@ -65,7 +74,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <section class="modal-content--main-section">
-          <p>Thank you for booking the artist!</p>
+          <p>Thank you for booking the band!</p>
           <p>Sigur Rós will get back to you as soon as possible.</p>
         </section>
       </div>

@@ -46,13 +46,19 @@ audioButton.onclick = (e)  => {
   audioButton.classList.toggle('audio-player--button_pause');
   if (!audio.paused) {
     audio.pause();
+    audioButton.setAttribute('title', 'Play the track');
   } else {
     audio.play();
+    audioButton.setAttribute('title', 'Pause the track');
   }
 };
 
+let duration = new Date(null);
+
 audio.onloadeddata = () => {
   $("#seek").attr("max", audio.duration);
+  duration.setSeconds(audio.duration);
+  $('.audio-player--duration').html(duration.toISOString().substr(14, 5));
 }
 
 audio.addEventListener('timeupdate', function (){

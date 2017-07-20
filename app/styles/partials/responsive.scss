@@ -1,9 +1,6 @@
 @media screen and (max-width: 1200px) {
   #background--video {
-    width: 140vw;
-    height: 140vh;
-    margin-left: -20vw;
-    margin-top: -20vh;
+    @include video-width-height-margin(140vw, 140vh);
   }
 }
 
@@ -13,17 +10,16 @@
   }
 
   .content--top-section {
-    width: 80%;
+    width: $width-responsive;
     margin: $padding-top-content;
   }
 
   .modal-content {
-    width: 80%;
+    width: $width-responsive;
   }
 
-  .about--artist,
-  .about--pictures {
-    width: 100%;
+  .about {
+    padding: $padding-top-content;
   }
 
   .about--pictures {
@@ -35,5 +31,4 @@
     max-height: 100%;
     margin: 5% 0;
   }
-
 }

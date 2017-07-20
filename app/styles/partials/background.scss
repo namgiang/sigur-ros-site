@@ -1,7 +1,3 @@
-body {
-  background-color: black;
-}
-
 .background {
   position: fixed;
   width: 100%;
@@ -13,11 +9,8 @@ body {
 }
 
 #background-video {
-  @include position(absolute, -10% 0 0 -10%);
-  width: 120%;
-  height: 120%;
+  @include video-width-height-margin(120vw, 120vh);
+  @extend .composite-layer;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  will-change: transform;
-  transform: translateZ(0);
 }
